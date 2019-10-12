@@ -1,0 +1,35 @@
+version: '3'
+services:
+  ats7:
+    image: labats7
+    build:
+      context: .
+      dockerfile: Dockerfile-ats7
+    expose:
+      - 8080
+    ports:
+      - "9010:8080"
+    depends_on:
+      - lnmp
+      - lamp
+    links:
+      - lnmp:linkedlnmp.net
+      - lamp:linkedlamp.net
+  lamp:
+    image: lablamp
+    build:
+      context: .
+      dockerfile: Dockerfile-lamp
+    expose:
+      - 80
+    ports:
+      - "9011:80"
+  lnmp:
+    image: lablnmp
+    build:
+      context: .
+      dockerfile: Dockerfile-lnmp
+    expose:
+      - 80
+    ports:
+      - "9012:80"

@@ -1,0 +1,52 @@
+version: '3'
+services:
+  haproxy:
+    image: labhaproxy
+    build:
+      context: .
+      dockerfile: Dockerfile-haproxy
+    expose:
+      - 80
+    ports:
+      - "8001:80"
+    links:
+      - ats7:linkedats7.net
+      - ats6:linkedats6.net
+    depends_on:
+      - ats7
+      - ats6
+  ats7:
+    image: labats7
+    build:
+      context: .
+      dockerfile: Dockerfile-ats7
+    expose:
+      - 8080
+    ports:
+      - "8007:8080"
+    depends_on:
+      - nginx
+    links:
+      - nginx:linkednginx.net
+  ats6:
+    image: labats6
+    build:
+      context: .
+      dockerfile: Dockerfile-ats6
+    expose:
+      - 8080
+    ports:
+      - "8006:8080"
+    depends_on:
+      - nginx
+    links:
+      - nginx:linkednginx.net
+  nginx:
+    image: labnginx
+    build:
+      context: .
+      dockerfile: Dockerfile-nginx
+    expose:
+      - 80
+    ports:
+      - "8002:80"
