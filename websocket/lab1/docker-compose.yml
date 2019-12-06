@@ -1,0 +1,25 @@
+version: '3'
+services:
+  varnish:
+    image: websocket-varnish
+    build:
+      context: .
+      dockerfile: varnish.dockerfile
+    ports:
+      - "9020:80"
+    depends_on:
+      - apache
+      - flask
+    links:
+      - apache:apache.net
+      - flask:flask.net
+  apache:
+    image: websocket-apache
+    build:
+      context: .
+      dockerfile: apache.dockerfile
+  flask:
+    image: websocket-flask
+    build:
+      context: .
+      dockerfile: flask.dockerfile
