@@ -1,5 +1,9 @@
 #	HTTP-Smuggling-Lab
 
+You can learn more in [Help you understand HTTP Smuggling in one article](https://blog.zeddyu.info/2019/12/08/HTTP-Smuggling-en/) or the chinese version [一篇文章带你读懂 HTTP Smuggling 攻击](https://blog.zeddyu.info/2019/12/05/HTTP-Smuggling/).
+
+
+
 This repo is about learning HTTP Smuggling.
 
 
@@ -12,7 +16,11 @@ Lab2 uses ATS as front server and uses LAMP and LNMP as backend servers.
 
 
 
-Jetty is jetty v9.4.9. You will get more information in [Jetty-README](./jetty/README.md)
+Jetty is jetty v9.4.9. You will get more information in [Jetty-README](./jetty/README.md).
+
+
+
+Websocket Lab is about the websocket http smuggling. You will get more information in [Websocket-README](./websocket/lab1/README.md).
 
 
 
