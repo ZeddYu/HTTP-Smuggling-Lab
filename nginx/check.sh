@@ -2,4 +2,4 @@ printf 'GET / HTTP/1.1\r\n'\
 'Host: localhost\r\n'\
 'Connection: close\r\n'\
 '\r\n'\
-|nc -w 1 127.0.0.1 9015
+|nc 127.0.0.1 9015
