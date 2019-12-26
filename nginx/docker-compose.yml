@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nginx_1_17_6:
+    image: nginx:1.17.6
+    volumes: 
+      - ./conf.d/:/etc/nginx/conf.d/
+    ports:
+      - "9015:80"
