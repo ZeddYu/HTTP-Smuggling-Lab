@@ -43,10 +43,36 @@ printf 'GET /a HTTP/1.1\r\n'\
 'GET /_hidden/index.html HTTP/1.1\r\n'\
 'Host: notlocalhost\r\n'\
 '\r\n'\
-|nc -w 1 127.0.0.1 9015
+|nc 127.0.0.1 9015
 ```
 
+Try the command above and you will get two responses as following.
 
+```http
+HTTP/1.1 302 Moved Temporarily
+Server: nginx/1.17.6
+Date: Sat, 04 Jan 2020 04:23:26 GMT
+Content-Type: text/html
+Content-Length: 145
+Connection: keep-alive
+Location: http://example.org
+
+<html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+<hr><center>nginx/1.17.6</center>
+</body>
+</html>
+HTTP/1.1 200 OK
+Server: nginx/1.17.6
+Date: Sat, 04 Jan 2020 04:23:26 GMT
+Content-Type: text/html
+Content-Length: 22
+Connection: keep-alive
+
+This should be hidden!
+```
 
 #	Reference
 
