@@ -1,4 +1,4 @@
-#	Nginx - Http Smuggling
+#	Nginx - Http Smuggling [CVE-2019-20372]
 
 ##	Composition
 
@@ -73,6 +73,16 @@ Connection: keep-alive
 
 This should be hidden!
 ```
+
+
+
+#	Openresty[CVE-2020-11724]
+
+[OpenResty](https://github.com/openresty/openresty) is a full-fledged web application server by bundling the standard nginx core, lots of 3rd-party nginx modules, as well as most of their external dependencies.
+
+OpenResty includes Nginx as a component and does include its own nginx core patches. So it is affected by CVE-2019-20372. And its configuration is the same as the nginx. POC is also the same.
+
+
 
 #	Reference
 
