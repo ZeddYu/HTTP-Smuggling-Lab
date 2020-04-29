@@ -4,7 +4,7 @@ services:
     image: labats7
     build:
       context: .
-      dockerfile: Dockerfile-ats7
+      dockerfile: ats7.Dockerfile
     expose:
       - 8080
     ports:
@@ -19,7 +19,7 @@ services:
     image: lablamp
     build:
       context: .
-      dockerfile: Dockerfile-lamp
+      dockerfile: lamp.Dockerfile
     expose:
       - 80
     ports:
@@ -28,7 +28,7 @@ services:
     image: lablnmp
     build:
       context: .
-      dockerfile: Dockerfile-lnmp
+      dockerfile: lnmp.Dockerfile
     expose:
       - 80
     ports:

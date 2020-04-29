@@ -1,13 +1,11 @@
-FROM centos:7
-ENV TERM xterm-256color
-ENV container docker
+FROM phusion/baseimage
+RUN apt update
+RUN apt-get install -y wget curl build-essential software-properties-common autoconf automake libtool bzip2 libffi-dev gcc g++ openssl libssl-dev tcl-dev libpcre3 libpcre3-dev libcap-dev lua5.3 libncurses5-dev make
+
+# RUN yum clean all 
+# RUN wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+# RUN yum update -y && yum makecache
 WORKDIR /tmp
-RUN yum clean all && yum update -y
-RUN yum install vim wget telnet bind-utils net-tools lsof pkgconfig libtool gcc gcc-c++ make \
-	openssl openssl-devel tcl tcl-devel pcre pcre-devel libcap libcap-devel \
-	flex hwloc hwloc-devel lua ncurses ncurses-devel curl libcurl-devel autoconf automake \
-libunwind libunwind-devel bzip2 expat-devel -y
-RUN yum clean all && yum update -y
 RUN wget http://archive.apache.org/dist/trafficserver/trafficserver-7.1.2.tar.bz2
 RUN tar -xvf trafficserver-7.1.2.tar.bz2
 WORKDIR /tmp/trafficserver-7.1.2
