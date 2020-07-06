@@ -1,0 +1,22 @@
+version: '3'
+services:
+  haproxy:
+    image: labhaproxy2
+    build:
+      context: .
+      dockerfile: haproxy.dockerfile
+    expose:
+      - 80
+    ports:
+      - "9013:80"
+    links:
+      - gunicorn:gunicorn.net
+    depends_on:
+      - gunicorn
+  gunicorn:
+    image: labgunicorn
+    build:
+      context: .
+      dockerfile: gunicorn.dockerfile
+    ports:
+        - "9014:6767"
