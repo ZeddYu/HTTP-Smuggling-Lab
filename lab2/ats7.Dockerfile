@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:master
 RUN apt update
 RUN apt-get install -y wget curl build-essential software-properties-common autoconf automake libtool bzip2 libffi-dev gcc g++ openssl libssl-dev tcl-dev libpcre3 libpcre3-dev libcap-dev lua5.3 libncurses5-dev make
 
