@@ -1,5 +1,5 @@
-FROM mattrayner/lamp:latest-1804
+FROM php:7.4-apache-buster
 
-COPY ./lamp/index.php /app/index.php
+COPY ./lamp/index.php /var/www/html/index.php
 
-CMD ["/run.sh"]
+EXPOSE 80

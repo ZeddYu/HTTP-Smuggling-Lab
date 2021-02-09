@@ -1,5 +1,5 @@
-FROM fbraz3/lnmp:7.1
+FROM wyveo/nginx-php-fpm:php74
 
-COPY lnmp/index.php /app/public/index.php
+COPY lnmp/index.php /usr/share/nginx/html/index.php
 
 EXPOSE 80
