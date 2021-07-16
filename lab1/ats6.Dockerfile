@@ -26,8 +26,8 @@ RUN ln -s /opt/ts/bin/trafficserver /etc/init.d/trafficserver || /bin/true
 # activate reverse proxy
 RUN sed -i 's/CONFIG proxy.config.reverse_proxy.enabled INT 0/CONFIG proxy.config.reverse_proxy.enabled INT 1/g' /etc/trafficserver/records.config
 
-RUN echo "map http://dummy-host6.example.com/ http://linkednginx.net/" > /etc/trafficserver/remap.config
-RUN echo "reverse_map http://linkednginx.net/ http://dummy-host6.example.com/" >> /etc/trafficserver/remap.config
+RUN echo "map http://dummy-host6.example.com/ http://nginx/" > /etc/trafficserver/remap.config
+RUN echo "reverse_map http://nginx/ http://dummy-host6.example.com/" >> /etc/trafficserver/remap.config
 
 EXPOSE 8080
 

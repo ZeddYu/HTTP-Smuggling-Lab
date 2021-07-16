@@ -1,10 +1,10 @@
 vcl 4.0;
 backend apache {
-    .host = "apache.net";
+    .host = "apache";
     .port = "80";
 }
 backend flask {
-    .host = "flask.net";
+    .host = "flask";
     .port = "5000";
 }
 

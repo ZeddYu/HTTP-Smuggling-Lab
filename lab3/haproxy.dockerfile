@@ -11,7 +11,7 @@ RUN echo 'defaults\n\
 \n\
 backend web\n\
     http-reuse always\n\
-    server web0 gunicorn.net:6767\n\
+    server web0 gunicorn:6767\n\
 \n\
 frontend http\n\
     bind *:80\n\

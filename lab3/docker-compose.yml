@@ -9,8 +9,6 @@ services:
       - 80
     ports:
       - "9013:80"
-    links:
-      - gunicorn:gunicorn.net
     depends_on:
       - gunicorn
   gunicorn:

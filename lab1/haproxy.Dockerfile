@@ -21,12 +21,12 @@ frontend http-in\n\
 backend ats7_vhost\n\
     mode http\n\
     option forwardfor\n\
-    server ats7 linkedats7.net:8080\n\
+    server ats7 ats7:8080\n\
 \n\
 backend ats6_vhost\n\
     mode http\n\
     option forwardfor\n\
-    server ats6 linkedats6.net:8080\n\
+    server ats6 ats6:8080\n\
 \n'> /usr/local/etc/haproxy/haproxy.cfg
 
 CMD ["haproxy", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
