@@ -27,8 +27,8 @@ RUN sed -i 's/CONFIG proxy.config.url_remap.remap_required INT 0/CONFIG proxy.co
 RUN sed -i 's/CONFIG proxy.config.http.cache.http INT 1/CONFIG proxy.config.http.cache.http INT 0/g' /etc/trafficserver/records.config
 
 
-RUN echo "map http://lnmp.com/ http://linkedlnmp.net/" > /etc/trafficserver/remap.config
-RUN echo "map http://lamp.com/ http://linkedlamp.net/" >> /etc/trafficserver/remap.config
+RUN echo "map http://lnmp.com/ http://lnmp/" > /etc/trafficserver/remap.config
+RUN echo "map http://lamp.com/ http://lamp/" >> /etc/trafficserver/remap.config
 
 EXPOSE 8080
 

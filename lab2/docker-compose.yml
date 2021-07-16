@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 services:
   ats7:
     image: labats7
@@ -12,9 +12,6 @@ services:
     depends_on:
       - lnmp
       - lamp
-    links:
-      - lnmp:linkedlnmp.net
-      - lamp:linkedlamp.net
   lamp:
     image: lablamp
     build:
