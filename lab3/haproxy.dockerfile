@@ -1,4 +1,4 @@
-FROM haproxy:2.0
+FROM haproxy:1.9.10
 EXPOSE 80
 
 RUN echo 'defaults\n\
