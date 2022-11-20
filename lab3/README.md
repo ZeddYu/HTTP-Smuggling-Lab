@@ -41,7 +41,7 @@ printf 'POST / HTTP/1.1\r\n'\
 'Content-Length: 1\r\n'\
 '\r\n'\
 '0'\
-| nc 127.0.0.1 9014
+| nc 127.0.0.1 9013
 ```
 
 You will get two responses.
